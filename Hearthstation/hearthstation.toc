@@ -1,0 +1,15 @@
+## Interface: 90100
+## Title: Hearthstation
+## Notes: An easier way to access your hearthstones and whistles.
+## Version: 2021-08
+## Author: neumotora
+
+hearthstation.xml
+hearthstation-list.lua
+hearthstation.lua
+portalstation\portalstation-list.lua
+portalstation\portalstation.xml
+portalstation\portalstation.lua
+## campstation\campstation.xml
+
+campstation\campstation.lua

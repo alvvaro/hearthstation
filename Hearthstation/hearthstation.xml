@@ -1,0 +1,34 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+  ..\FrameXML\UI.xsd">
+
+  <Frame name="hsParentFrame" parent="MainMenuBar">
+    <Size><AbsDimension x="55" y="55"/></Size>
+    <Anchors>
+      <!-- <Anchor point="BOTTOMLEFT" relativeTo="hsMainFrame" relativePoint="TOPLEFT"/> -->
+      <Anchor point="BOTTOMLEFT" relativeTo="UIParent" relativePoint="BOTTOMLEFT"/>
+    </Anchors>
+  </Frame>
+
+  <Button name="hsActionButton" parent="hsParentFrame" inherits="SecureActionButtonTemplate, ActionButtonTemplate" virtual="true">
+    <Size x="28" y="28"/>
+    <Anchors>
+      <Anchor point="CENTER" relativePoint="CENTER"/>
+    </Anchors>
+    <Frames>
+      <Cooldown name="$parentCD" inherits="CooldownFrameTemplate" parentKey="cooldown" />
+    </Frames>
+    <Scripts>
+      <OnLoad>
+        self:RegisterForClicks("AnyUp")
+        self:EnableMouse(true)
+        self:SetAttribute("type", "macro")
+        self.icon:SetDesaturated(false)
+      </OnLoad>
+    </Scripts>
+  </Button>
+
+  <Button name="hsActionButtonBig" parent="hsParentFrame" inherits="hsActionButton">
+    <Size x="45" y="45"/>
+  </Button>
+
+</Ui>
